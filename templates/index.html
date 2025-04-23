@@ -5,23 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VQA Visualization</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Visual Question Answering Visualization</h1>
+        <!-- <h1>Visual Question Answering Visualization</h1> -->
         
         <div class="filter-container">
-            <h2>Question Filter</h2>
-            <div class="filter-options">
-                <label for="episode-filter">Episode:</label>
-                <select id="episode-filter">
-                    <option value="">All Episodes</option>
-                </select>
+            <h1>Visual Question Answering</h1>
+            <div class="filter-panels">
+                <div class="filter-panel left-panel">
+                    <!-- <h3>Episode</h3>
+                    <div class="episode-filter-wrapper">
+                        <label for="episode-filter">Select Episode:</label>
+                        <select id="episode-filter">
+                            <option value="">All Episodes</option>
+                        </select>
+                    </div> -->
+                    <h3>VQA Dataset Overview</h3> 
+                    <div class="vqa-description">
+                        <p class="description-intro">
+                            <span class="highlight">📊 Visual Question Answering</span> dataset contains <span class="highlight">xxx questions</span> about <span class="highlight">xxx images</span>.
+                        </p>
+                        <p class="description-subtitle">Generation Process:</p>
+                        <ul class="process-list">
+                            <li><span class="emoji">🔍</span> 3D keypoint selection and projections</li>
+                            <li><span class="emoji">🤖</span> Image filtering by object/robot detection</li>
+                            <li><span class="emoji">❓</span> Question and answer generation</li>
+                        </ul>
+                    </div>
+                </div>
                 
-                <label for="category-filter">Question Category:</label>
-                <select id="category-filter">
-                    <option value="">All Categories</option>
-                </select>
+                <div class="filter-panel right-panel">
+                    <div class="category-chart-container">
+                        <div class="category-header">
+                            <h3>Question Categories (Click to filter)</h3>
+                            <p> Double-click a segment to unselect</p>
+                            <div class="selected-category">
+                                <span>Selected: <span id="selected-category-text">All Categories</span></span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="category-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
                 <button id="apply-filter">Apply</button>
             </div>
         </div>

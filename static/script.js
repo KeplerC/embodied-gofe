@@ -4,12 +4,22 @@ let currentCategory = '';
 let currentEpisode = '';
 let episodeList = [];
 let categoryList = [];
+let categoryChart = null;
+let categoryData = {};
+
+// Register Chart.js DataLabels plugin
+Chart.register(ChartDataLabels);
+
+// Variables to track double-click
+let lastClickedTime = 0;
+let lastClickedIndex = -1;
+const doubleClickThreshold = 300; // milliseconds
 
 // Fetch VQA data from the server
 async function fetchData() {
     try {
         const queryParams = new URLSearchParams();
-        queryParams.append('limit', 1000);
+        queryParams.append('limit', 100);
         
         if (currentCategory) {
             queryParams.append('category', currentCategory);
@@ -176,25 +186,212 @@ function updatePageInfo() {
     document.getElementById('page-info').textContent = `Item ${currentIndex + 1} of ${vqaData.length}`;
 }
 
-// Fetch categories
+// Fetch categories and create pie chart
 async function fetchCategories() {
     try {
         const response = await fetch('/api/categories');
         const data = await response.json();
         categoryList = data.categories;
+        categoryData = data.counts;
         
-        // Populate category filter dropdown
-        const categoryFilter = document.getElementById('category-filter');
-        categoryFilter.innerHTML = '<option value="">All Categories</option>';
-        
-        categoryList.forEach(category => {
-            const option = document.createElement('option');
-            option.value = category;
-            option.textContent = category;
-            categoryFilter.appendChild(option);
-        });
+        // Create or update the pie chart
+        createCategoryChart();
     } catch (error) {
         console.error('Error fetching categories:', error);
+    }
+}
+
+// Create category pie chart
+function createCategoryChart() {
+    const ctx = document.getElementById('category-chart').getContext('2d');
+    
+    // Prepare data for chart
+    const labels = Object.keys(categoryData);
+    const data = Object.values(categoryData);
+    
+    // Generate colors for each category
+    const colors = generateColors(labels.length);
+    
+    // Destroy existing chart if it exists
+    if (categoryChart) {
+        categoryChart.destroy();
+    }
+    
+    // Create new chart
+    categoryChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels.map((label, i) => `${label} (${data[i]})`),
+            datasets: [{
+                data: data,
+                backgroundColor: colors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        boxWidth: 15,
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            const percentage = Math.round((value / total) * 100);
+                            return `${label}: ${percentage}%`;
+                        }
+                    }
+                },
+                datalabels: {
+                    display: function(context) {
+                        return context.dataset.data[context.dataIndex] > 0;
+                    },
+                    color: '#444444',
+                    font: {
+                        weight: 'bold',
+                        size: 14
+                    },
+                    formatter: function(value, context) {
+                        return value;
+                    },
+                    align: 'center',
+                    anchor: 'center',
+                    textStrokeColor: 'rgba(255,255,255,0.7)',
+                    textStrokeWidth: 4,
+                    borderRadius: 4,
+                    padding: 4
+                }
+            },
+            onClick: handleChartClick
+        }
+    });
+}
+
+// Generate colors for pie chart segments
+function generateColors(count) {
+    const colors = [];
+    const morandiColors = [
+        // Muted reds
+        '#C8ADA0', '#D1B2A8', '#E2BFB3', '#BEA299', '#AD8F84',
+        // Muted blues
+        '#A2B5C7', '#B6C5D1', '#C7D3DB', '#8CA3B4', '#7A95A9',
+        // Muted purples
+        '#B2A8B9', '#C4B8C8', '#D4CDD8', '#9C93A4', '#857992',
+        // Muted greens
+        '#A9BBA0', '#C0CDBB', '#D1D9CA', '#8CA085', '#77927A',
+        // Additional earth tones
+        '#D4C4B7', '#BEB6A9', '#A49B8C', '#8C857A', '#6C6359'
+    ];
+    
+    for (let i = 0; i < count; i++) {
+        if (i < morandiColors.length) {
+            colors.push(morandiColors[i]);
+        } else {
+            // Generate random muted Morandi-like colors with varied hues
+            const hueRanges = [
+                [0, 30],    // reds
+                [180, 240], // blues
+                [250, 290], // purples
+                [90, 150]   // greens
+            ];
+            
+            // Randomly select one of the hue ranges
+            const selectedRange = hueRanges[Math.floor(Math.random() * hueRanges.length)];
+            const h = Math.floor(Math.random() * (selectedRange[1] - selectedRange[0])) + selectedRange[0];
+            const s = Math.floor(Math.random() * 25) + 15; // Low-medium saturation (15-40%)
+            const l = Math.floor(Math.random() * 25) + 60; // Medium-high lightness (60-85%)
+            
+            colors.push(`hsl(${h}, ${s}%, ${l}%)`);
+        }
+    }
+    
+    return colors;
+}
+
+// Handle click on pie chart segments
+function handleChartClick(event, elements) {
+    const now = new Date().getTime();
+    
+    if (elements.length > 0) {
+        const clickedIndex = elements[0].index;
+        const fullLabel = categoryChart.data.labels[clickedIndex];
+        // Extract just the category name without the count
+        const category = Object.keys(categoryData)[clickedIndex];
+        
+        // Check for double-click on the same segment
+        if (clickedIndex === lastClickedIndex && (now - lastClickedTime) < doubleClickThreshold) {
+            // Double-click detected, unselect the category
+            currentCategory = '';
+            document.getElementById('selected-category-text').textContent = 'All Categories';
+            
+            // Reset all segment colors to their original state
+            const dataset = categoryChart.data.datasets[0];
+            const backgroundColors = dataset.backgroundColor;
+            const originalColors = generateColors(categoryChart.data.labels.length);
+            
+            for (let i = 0; i < backgroundColors.length; i++) {
+                backgroundColors[i] = originalColors[i];
+            }
+            
+            categoryChart.update();
+            
+            // Reset the last clicked tracking
+            lastClickedTime = 0;
+            lastClickedIndex = -1;
+            return;
+        }
+        
+        // Update tracking for double-click detection
+        lastClickedTime = now;
+        lastClickedIndex = clickedIndex;
+        
+        // Update selected category
+        currentCategory = category;
+        document.getElementById('selected-category-text').textContent = fullLabel;
+        
+        // Highlight the selected segment
+        const dataset = categoryChart.data.datasets[0];
+        const backgroundColors = dataset.backgroundColor;
+        const originalColors = generateColors(categoryChart.data.labels.length);
+        
+        // Reset all segment colors
+        for (let i = 0; i < backgroundColors.length; i++) {
+            if (i === clickedIndex) {
+                // Make the selected segment brighter
+                const color = originalColors[i];
+                const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                if (rgbMatch) {
+                    const r = Math.min(255, parseInt(rgbMatch[1]) + 40);
+                    const g = Math.min(255, parseInt(rgbMatch[2]) + 40);
+                    const b = Math.min(255, parseInt(rgbMatch[3]) + 40);
+                    backgroundColors[i] = `rgb(${r}, ${g}, ${b})`;
+                } else {
+                    // If color format is different, just use a highlight color
+                    backgroundColors[i] = '#FFD700';
+                }
+            } else {
+                // Restore original color
+                backgroundColors[i] = originalColors[i];
+            }
+        }
+        
+        categoryChart.update();
+    } else {
+        // Clicked outside any segment, reset to all categories
+        currentCategory = '';
+        document.getElementById('selected-category-text').textContent = 'All Categories';
+        lastClickedTime = 0;
+        lastClickedIndex = -1;
     }
 }
 
@@ -279,8 +476,8 @@ async function fetchStatistics() {
 
 // Apply filters
 function applyFilter() {
-    currentCategory = document.getElementById('category-filter').value;
     currentEpisode = document.getElementById('episode-filter').value;
+    // currentCategory is already updated when clicking on the pie chart
     fetchData();
 }
 
