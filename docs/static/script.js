@@ -140,7 +140,7 @@ function displayVQA(index) {
         vqa.question.image_ids.forEach(imageId => {
             if (imageId) {
                 const img = document.createElement('img');
-                img.src = `/api/images/${imageId}`;
+                img.src = `images/${imageId}`;
                 img.alt = 'Question Image';
                 img.loading = 'lazy'; // Lazy load images
                 
@@ -177,7 +177,7 @@ function displayVQA(index) {
         
         if (choice.image_id) {
             const img = document.createElement('img');
-            img.src = `/api/images/${choice.image_id}`;
+            img.src = `images/${choice.image_id}`;
             img.alt = `Choice ${String.fromCharCode(65 + idx)} Image`;
             img.className = 'choice-image';
             img.loading = 'lazy'; // Lazy load images
