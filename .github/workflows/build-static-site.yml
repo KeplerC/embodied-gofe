@@ -10,9 +10,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        persist-credentials: true
     
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -28,7 +32,24 @@ jobs:
       run: |
         # Skip this step if data file doesn't exist yet
         if [ -f "vqa_data.json" ]; then
+          # List all image directories for debugging
+          echo "Image directories in extracted_data:"
+          find extracted_data -type d -name "images" | sort
+          
+          # Create output directory
+          mkdir -p docs/images
+          
+          # Check if images directory exists and copy all images explicitly
+          if [ -d "extracted_data" ]; then
+            echo "Copying all PNG files from extracted_data to docs/images"
+            find extracted_data -name "*.png" -exec cp {} docs/images/ \;
+          fi
+          
           python static_site_generator.py --data-file=vqa_data.json --data-dir=extracted_data --output-dir=docs
+          
+          # Verify images were copied
+          echo "Images in docs/images directory:"
+          ls -la docs/images/ || echo "No images found in docs/images"
         else
           echo "No VQA data file found. Skipping static site generation."
           # Create docs directory for GitHub Pages
@@ -42,4 +63,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages
-        folder: docs 
+        folder: docs
+        token: ${{ secrets.GITHUB_TOKEN }}
