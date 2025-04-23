@@ -21,53 +21,53 @@ def load_vqa_data_from_json(json_file, base_dir, shuffle=True):
     global vqa_data, images_dirs
     vqa_data = []
     
-    try:
-        # Load the JSON file
-        with open(json_file, 'r') as f:
-            data = json.load(f)
-            all_vqa_items = data.get('vqa_items', [])
-            
-        print(f"Loaded {len(all_vqa_items)} VQA items from {json_file}")
+    # try:
+    # Load the JSON file
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+        all_vqa_items = data
         
-        # Process each VQA item
-        for item in all_vqa_items:
-            # Get episode directory to locate images
-            episode_dir = item.get('episode_dir')
-            if not episode_dir:
-                print(f"Warning: VQA item {item.get('unique_id', 'unknown')} missing episode_dir")
-                continue
-                
-            # Set up image directories
-            episode_path = os.path.join(base_dir, episode_dir)
-            images_dir = os.path.join(episode_path, "images")
+    print(f"Loaded {len(all_vqa_items)} VQA items from {json_file}")
+    
+    # Process each VQA item
+    for item in all_vqa_items:
+        # Get episode directory to locate images
+        episode_dir = item.get('episode_dir')
+        if not episode_dir:
+            print(f"Warning: VQA item {item.get('unique_id', 'unknown')} missing episode_dir")
+            continue
             
-            if os.path.isdir(images_dir):
-                # Register question image locations
-                for img_id in item.get('question', {}).get('image_ids', []):
-                    if img_id:
-                        images_dirs[img_id] = images_dir
-                
-                # Register choice image locations
-                for choice in item.get('choices', []):
-                    img_id = choice.get('image_id')
-                    if img_id:
-                        images_dirs[img_id] = images_dir
-            
-            # Add to our global list
-            vqa_data.append(item)
+        # Set up image directories
+        episode_path = os.path.join(base_dir, episode_dir)
+        images_dir = os.path.join(episode_path, "images")
         
-        # Shuffle all VQA data if requested
-        if shuffle:
-            random.shuffle(vqa_data)
-            print(f"Total VQA items loaded and shuffled: {len(vqa_data)}")
-        else:
-            print(f"Total VQA items loaded (not shuffled): {len(vqa_data)}")
+        if os.path.isdir(images_dir):
+            # Register question image locations
+            for img_id in item.get('question', {}).get('image_ids', []):
+                if img_id:
+                    images_dirs[img_id] = images_dir
             
-        return vqa_data
+            # Register choice image locations
+            for choice in item.get('choices', []):
+                img_id = choice.get('image_id')
+                if img_id:
+                    images_dirs[img_id] = images_dir
         
-    except Exception as e:
-        print(f"Error loading VQA data from {json_file}: {e}")
-        return []
+        # Add to our global list
+        vqa_data.append(item)
+    
+    # Shuffle all VQA data if requested
+    if shuffle:
+        random.shuffle(vqa_data)
+        print(f"Total VQA items loaded and shuffled: {len(vqa_data)}")
+    else:
+        print(f"Total VQA items loaded (not shuffled): {len(vqa_data)}")
+        
+    return vqa_data
+    
+    # except Exception as e:
+    #     print(f"Error loading VQA data from {json_file}: {e}")
+    #     return []
 
 def load_vqa_data_from_csv(csv_file, base_dir, shuffle=True):
     """Load VQA data from a single consolidated CSV file"""
@@ -117,23 +117,7 @@ def load_vqa_data_from_csv(csv_file, base_dir, shuffle=True):
                         }
                         vqa_item['choices'].append(choice)
                 
-                # Set up image directories
-                episode_path = os.path.join(base_dir, episode_dir)
-                images_dir = os.path.join(episode_path, "images")
-                
-                if os.path.isdir(images_dir):
-                    # Register question image locations
-                    for img_id in vqa_item['question']['image_ids']:
-                        if img_id:
-                            images_dirs[img_id] = images_dir
-                    
-                    # Register choice image locations
-                    for choice in vqa_item['choices']:
-                        img_id = choice.get('image_id')
-                        if img_id:
-                            images_dirs[img_id] = images_dir
-                
-                # Add to our global list
+
                 vqa_data.append(vqa_item)
         
         print(f"Loaded {len(vqa_data)} VQA items from {csv_file}")
@@ -177,6 +161,7 @@ def categorize_questions():
         categories[tag].append(vqa)
     
     return categories
+
 
 @app.route('/')
 def index():
@@ -248,11 +233,7 @@ def get_image(image_id):
     if not re.match(r'^[a-zA-Z0-9\-_]+$', image_id):
         abort(400, "Invalid image ID format")
     
-    # Find the image directory for this ID
-    if image_id not in images_dirs:
-        abort(404, f"Image ID {image_id} not found")
-    
-    images_dir = images_dirs[image_id]
+    images_dir = os.path.abspath("./extracted_data")
     
     # Try both with and without extension
     if os.path.exists(os.path.join(images_dir, f"{image_id}.png")):
