@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VQA Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Visual Question Answering Visualization</h1>
+        
+        <div class="filter-container">
+            <h2>Question Filter</h2>
+            <div class="filter-options">
+                <label for="episode-filter">Episode:</label>
+                <select id="episode-filter">
+                    <option value="">All Episodes</option>
+                </select>
+                
+                <label for="category-filter">Question Category:</label>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                </select>
+                <button id="apply-filter">Apply</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="prev-btn" disabled>Previous</button>
+            <span id="page-info">Item 1 of 0</span>
+            <button id="next-btn">Next</button>
+            <div class="keyboard-hint">(Use ← → arrow keys to navigate)</div>
+        </div>
+        
+        <div id="vqa-container" class="vqa-horizontal-layout">
+            <div class="images-section">
+                <h2>Images</h2>
+                <div id="question-images" class="image-gallery"></div>
+            </div>
+            
+            <div class="content-section">
+                <div class="question-section">
+                    <h2>Question</h2>
+                    <p id="question-text"></p>
+                    <p id="episode-info" class="episode-info"></p>
+                </div>
+                
+                <div class="choices-section">
+                    <h2>Choices</h2>
+                    <div id="choices-container"></div>
+                </div>
+            </div>
+        </div>
+                
+        <div class="gallery-container">
+            <h2>Example Gallery</h2>
+            <div id="examples-gallery" class="examples-gallery-container"></div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+        
