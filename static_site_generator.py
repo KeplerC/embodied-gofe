@@ -151,7 +151,7 @@ def copy_image(image_id, data_dir, output_dir):
     for source_path in source_paths:
         if os.path.exists(source_path):
             import shutil
-            dest_path = os.path.join(output_dir, f"{image_id}.png" if not source_path.endswith(image_id) else image_id)
+            dest_path = image_id.strip(".png")
             try:
                 shutil.copy2(source_path, dest_path)
                 return True
