@@ -30,7 +30,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Move the can to the left",
       "camera_name": "ext2"
     },
@@ -69,7 +69,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Put the sock on the windowsill",
       "camera_name": "ext2"
     },
@@ -108,7 +108,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Put the black shirt on the couch",
       "camera_name": "ext1"
     },
@@ -147,7 +147,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Straighten out the towel",
       "camera_name": "ext1"
     },
@@ -186,7 +186,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Place the pack of doritos inside the sink",
       "camera_name": "ext1"
     },
@@ -225,7 +225,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Push down the button on the toaster.",
       "camera_name": "ext1"
     },
@@ -264,7 +264,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Pour the contents of the orange cup into the bowl",
       "camera_name": "ext1"
     },
@@ -303,7 +303,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Hang the white cloth on the black stand",
       "camera_name": "ext1"
     },
@@ -342,7 +342,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Pull the handle of the tap to the right",
       "camera_name": "ext1"
     },
@@ -381,7 +381,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Turn on the toaster",
       "camera_name": "ext1"
     },
@@ -420,7 +420,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Put the marker into the mug.",
       "camera_name": "ext2"
     },
@@ -459,7 +459,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Open the lid of the coffee maker",
       "camera_name": "ext2"
     },
@@ -498,7 +498,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Open the tap",
       "camera_name": "ext1"
     },
@@ -537,7 +537,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_trajectory_understanding",
+      "tag": "trajectory_understanding",
       "language_instruction": "Remove the screwdriver from the tray and put it on the purple placemat",
       "camera_name": "ext1"
     },
@@ -575,7 +575,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -614,7 +614,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -653,7 +653,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": true,
       "is_in_last_phase": true,
       "path_indicates_success": true
@@ -692,7 +692,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -731,7 +731,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -770,7 +770,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -809,7 +809,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -848,7 +848,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -887,7 +887,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -926,7 +926,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -965,7 +965,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -1004,7 +1004,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_task_success_state",
+      "tag": "task_success_state",
       "is_success": false,
       "is_in_last_phase": false,
       "path_indicates_success": true
@@ -1043,7 +1043,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Fri_May_12_11_06_55_2023_q99",
     "trajectory_id": "Fri_May_12_11_06_55_2023",
@@ -1079,7 +1079,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Mon_Oct__9_21_37_04_2023_q39",
     "trajectory_id": "Mon_Oct__9_21_37_04_2023",
@@ -1115,7 +1115,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Sun_Nov_26_15_35_54_2023_q220",
     "trajectory_id": "Sun_Nov_26_15_35_54_2023",
@@ -1151,7 +1151,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Fri_Nov_24_20_58_12_2023_q102",
     "trajectory_id": "Fri_Nov_24_20_58_12_2023",
@@ -1187,7 +1187,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Mon_May_15_22_44_35_2023_q114",
     "trajectory_id": "Mon_May_15_22_44_35_2023",
@@ -1223,7 +1223,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_robot_gripper_open"
+      "tag": "robot_gripper_open"
     },
     "unique_id": "Fri_Jul__7_19_56_18_2023_q20",
     "trajectory_id": "Fri_Jul__7_19_56_18_2023",
@@ -1259,7 +1259,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_direction_selection"
+      "tag": "action_direction_selection"
     },
     "unique_id": "Tue_Jun_27_20_35_27_2023_q176",
     "trajectory_id": "Tue_Jun_27_20_35_27_2023",
@@ -1295,7 +1295,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_direction_selection"
+      "tag": "action_direction_selection"
     },
     "unique_id": "Mon_Jul_10_11_34_23_2023_q278",
     "trajectory_id": "Mon_Jul_10_11_34_23_2023",
@@ -1331,7 +1331,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_direction_selection"
+      "tag": "action_direction_selection"
     },
     "unique_id": "Wed_Apr_26_09_59_45_2023_q14",
     "trajectory_id": "Wed_Apr_26_09_59_45_2023",
@@ -1367,7 +1367,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_direction_selection"
+      "tag": "action_direction_selection"
     },
     "unique_id": "Sun_Jun_25_18_21_40_2023_q5",
     "trajectory_id": "Sun_Jun_25_18_21_40_2023",
@@ -1403,7 +1403,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_direction_selection"
+      "tag": "action_direction_selection"
     },
     "unique_id": "Fri_Jul__7_19_56_18_2023_q5",
     "trajectory_id": "Fri_Jul__7_19_56_18_2023",
@@ -1440,7 +1440,7 @@
     ],
     "metadata": {
       "target_object": "pillow",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Wed_Nov__1_10_21_17_2023_q80",
     "trajectory_id": "Wed_Nov__1_10_21_17_2023",
@@ -1477,7 +1477,7 @@
     ],
     "metadata": {
       "target_object": "cloth",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Mon_May_29_23_21_19_2023_q32",
     "trajectory_id": "Mon_May_29_23_21_19_2023",
@@ -1514,7 +1514,7 @@
     ],
     "metadata": {
       "target_object": "cup",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Mon_Dec__4_10_38_51_2023_q129",
     "trajectory_id": "Mon_Dec__4_10_38_51_2023",
@@ -1551,7 +1551,7 @@
     ],
     "metadata": {
       "target_object": "lid",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Tue_Oct_17_14_50_03_2023_q215",
     "trajectory_id": "Tue_Oct_17_14_50_03_2023",
@@ -1588,7 +1588,7 @@
     ],
     "metadata": {
       "target_object": "handle",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Sat_Jul__1_00_27_30_2023_q84",
     "trajectory_id": "Sat_Jul__1_00_27_30_2023",
@@ -1625,7 +1625,7 @@
     ],
     "metadata": {
       "target_object": "ropes",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Wed_Nov_22_15_33_23_2023_q132",
     "trajectory_id": "Wed_Nov_22_15_33_23_2023",
@@ -1662,7 +1662,7 @@
     ],
     "metadata": {
       "target_object": "coffee",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Mon_Nov_27_15_41_41_2023_q92",
     "trajectory_id": "Mon_Nov_27_15_41_41_2023",
@@ -1699,7 +1699,7 @@
     ],
     "metadata": {
       "target_object": "can",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Wed_Apr_26_18_00_13_2023_q73",
     "trajectory_id": "Wed_Apr_26_18_00_13_2023",
@@ -1736,7 +1736,7 @@
     ],
     "metadata": {
       "target_object": "marker",
-      "tag": "vqa_object_reachable"
+      "tag": "object_reachable"
     },
     "unique_id": "Fri_May_12_11_06_55_2023_q79",
     "trajectory_id": "Fri_May_12_11_06_55_2023",
@@ -1772,7 +1772,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_direction"
+      "tag": "relative_direction"
     },
     "unique_id": "Mon_May_29_23_21_19_2023_q7",
     "trajectory_id": "Mon_May_29_23_21_19_2023",
@@ -1808,7 +1808,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_direction"
+      "tag": "relative_direction"
     },
     "unique_id": "Sat_Dec__2_15_48_46_2023_q16",
     "trajectory_id": "Sat_Dec__2_15_48_46_2023",
@@ -1844,7 +1844,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_direction"
+      "tag": "relative_direction"
     },
     "unique_id": "Wed_Nov__1_10_21_17_2023_q6",
     "trajectory_id": "Wed_Nov__1_10_21_17_2023",
@@ -1880,7 +1880,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_direction"
+      "tag": "relative_direction"
     },
     "unique_id": "Tue_Oct_17_14_50_03_2023_q68",
     "trajectory_id": "Tue_Oct_17_14_50_03_2023",
@@ -1916,7 +1916,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": false
     },
     "unique_id": "Tue_Jul_25_12_29_36_2023_q70",
@@ -1953,7 +1953,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": true
     },
     "unique_id": "Fri_Jul__7_19_56_18_2023_q15",
@@ -1990,7 +1990,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": false
     },
     "unique_id": "Tue_Aug_15_14_44_19_2023_q79",
@@ -2027,7 +2027,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": false
     },
     "unique_id": "Fri_Nov_17_22_37_43_2023_q337",
@@ -2064,7 +2064,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": true
     },
     "unique_id": "Mon_May_29_23_21_19_2023_q76",
@@ -2101,7 +2101,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": true
     },
     "unique_id": "Fri_Jun_16_16_34_17_2023_q8",
@@ -2138,7 +2138,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": false
     },
     "unique_id": "Mon_Sep_25_09_15_11_2023_q116",
@@ -2175,7 +2175,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": true
     },
     "unique_id": "Mon_Oct__9_21_37_04_2023_q82",
@@ -2212,7 +2212,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_relative_depth",
+      "tag": "relative_depth",
       "is_asking_closest": false
     },
     "unique_id": "Fri_Nov_17_22_37_43_2023_q492",
@@ -2247,7 +2247,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Take the bottle top and put it on the bottle",
       "sampled_frames": [
         313,
@@ -2294,7 +2294,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Push the door handle down and open the door",
       "sampled_frames": [
         328,
@@ -2341,7 +2341,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Take the blocks in the bowl and put them on the table",
       "sampled_frames": [
         833,
@@ -2388,7 +2388,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Put the yellow cup and the knife in the bowl",
       "sampled_frames": [
         284,
@@ -2435,7 +2435,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Remove all the contents from the white plastic bag one at at time and put them on the table",
       "sampled_frames": [
         1024,
@@ -2482,7 +2482,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Remove the marker from the mug",
       "sampled_frames": [
         189,
@@ -2529,7 +2529,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Remove all the contents from the white plastic bag one at at time and put them on the table",
       "sampled_frames": [
         1024,
@@ -2576,7 +2576,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Put the rubber band on the cup",
       "sampled_frames": [
         141,
@@ -2623,7 +2623,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Take the blocks in the bowl and put them on the table",
       "sampled_frames": [
         833,
@@ -2670,7 +2670,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Push down the button on the toaster.",
       "sampled_frames": [
         139,
@@ -2717,7 +2717,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_goal_configuration",
+      "tag": "goal_configuration",
       "language_instruction": "Straighten out the towel",
       "sampled_frames": [
         279,
@@ -2766,7 +2766,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "contact",
       "target_object": "ropes",
       "timestep": 398
@@ -2805,7 +2805,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "contact",
       "target_object": "shirt",
       "timestep": 718
@@ -2844,7 +2844,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "immobilization",
       "target_object": "doll",
       "timestep": 47
@@ -2883,7 +2883,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "immobilization",
       "target_object": "sachet",
       "timestep": 101
@@ -2922,7 +2922,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "pre_grasp",
       "target_object": "spoon",
       "timestep": 67
@@ -2961,7 +2961,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_action_understanding",
+      "tag": "action_understanding",
       "current_phase": "pre_grasp",
       "target_object": "bottle",
       "timestep": 42
@@ -3000,7 +3000,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "immobilization",
       "next_phase": "contact",
       "target_object": "marker",
@@ -3040,7 +3040,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "contact",
       "next_phase": "detach",
       "target_object": "mug",
@@ -3080,7 +3080,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "post_grasp",
       "next_phase": "pre_grasp",
       "target_object": "contents",
@@ -3120,7 +3120,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "immobilization",
       "next_phase": "contact",
       "target_object": "marker",
@@ -3160,7 +3160,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "pre_grasp",
       "next_phase": "immobilization",
       "target_object": "lid",
@@ -3200,7 +3200,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_next_action",
+      "tag": "next_action",
       "current_phase": "pre_grasp",
       "next_phase": "immobilization",
       "target_object": "lid",
@@ -3552,7 +3552,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 149,
@@ -3599,7 +3599,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 152,
@@ -3646,7 +3646,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 465,
@@ -3693,7 +3693,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 171,
@@ -3740,7 +3740,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 59,
@@ -3787,7 +3787,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 279,
@@ -3834,7 +3834,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 507,
@@ -3881,7 +3881,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 114,
@@ -3928,7 +3928,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 32,
@@ -3975,7 +3975,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 503,
@@ -4022,7 +4022,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 28,
@@ -4069,7 +4069,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 247,
@@ -4116,7 +4116,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "wrist",
       "camera2": "ext1",
       "future_step": 153,
@@ -4163,7 +4163,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 559,
@@ -4210,7 +4210,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 33,
@@ -4257,7 +4257,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext2",
       "camera2": "ext1",
       "future_step": 116,
@@ -4304,7 +4304,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 73,
@@ -4351,7 +4351,7 @@
       }
     ],
     "metadata": {
-      "tag": "vqa_multi_view_correspondence",
+      "tag": "multi_view_correspondence",
       "camera1": "ext1",
       "camera2": "ext2",
       "future_step": 633,
