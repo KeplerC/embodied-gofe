@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VQA Visualization</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>Visual Question Answering Visualization</h1> -->
+        
+        <div class="filter-container">
+            <h1>Visual Question Answering</h1>
+            <div class="filter-panels">
+                <div class="filter-panel left-panel">
+                    <!-- <h3>Episode</h3>
+                    <div class="episode-filter-wrapper">
+                        <label for="episode-filter">Select Episode:</label>
+                        <select id="episode-filter">
+                            <option value="">All Episodes</option>
+                        </select>
+                    </div> -->
+                    <h3>VQA Dataset Overview</h3> 
+                    <div class="vqa-description">
+                        <p class="description-intro">
+                            <span class="highlight">📊 Visual Question Answering</span> dataset contains <span class="highlight">xxx questions</span> about <span class="highlight">xxx images</span>.
+                        </p>
+                        <p class="description-subtitle">Generation Process:</p>
+                        <ul class="process-list">
+                            <li><span class="emoji">🔍</span> 3D keypoint selection and projections</li>
+                            <li><span class="emoji">🤖</span> Image filtering by object/robot detection</li>
+                            <li><span class="emoji">❓</span> Question and answer generation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="filter-panel right-panel">
+                    <div class="category-chart-container">
+                        <div class="category-header">
+                            <h3>Question Categories (Click to filter)</h3>
+                            <p> Double-click a segment to unselect</p>
+                            <div class="selected-category">
+                                <span>Selected: <span id="selected-category-text">All Categories</span></span>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="category-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button id="apply-filter">Apply</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="prev-btn" disabled>Previous</button>
+            <span id="page-info">Item 1 of 0</span>
+            <button id="next-btn">Next</button>
+            <div class="keyboard-hint">(Use ← → arrow keys to navigate)</div>
+        </div>
+        
+        <div id="vqa-container" class="vqa-horizontal-layout">
+            <div class="images-section">
+                <h2>Images</h2>
+                <div id="question-images" class="image-gallery"></div>
+            </div>
+            
+            <div class="content-section">
+                <div class="question-section">
+                    <h2>Question</h2>
+                    <p id="question-text"></p>
+                    <p id="episode-info" class="episode-info"></p>
+                </div>
+                
+                <div class="choices-section">
+                    <h2>Choices</h2>
+                    <div id="choices-container"></div>
+                </div>
+            </div>
+        </div>
+                
+        <div class="gallery-container">
+            <h2>Example Gallery</h2>
+            <div id="examples-gallery" class="examples-gallery-container"></div>
+        </div>
+    </div>
+    
+    <script src="static/script.js"></script>
+    <footer style="text-align: center; margin-top: 20px; padding: 10px; border-top: 1px solid #eee; color: #666;">
+        <p>Visual Question Answering - Static Version</p>
+        <p><a href="https://github.com/yourusername/vqa-visualization" target="_blank">GitHub Repository</a></p>
+    </footer>
+</body>
+</html>
+        
